@@ -394,6 +394,7 @@ html {
 :root {
   --width-page: 100vw;
   --width-container: 100%;
+  --width-container-sm: 100%;
   --width-icon-large: 64px;
   --width-icon-normal: 48px;
   --width-icon-smaller: 24px;
@@ -486,6 +487,9 @@ html {
   padding-right: var(--padding-page);
   padding-left: var(--padding-page);
   margin: 0 auto;
+}
+.container--sm {
+  max-width: var(--width-container-sm);
 }
 .swiper-horizontal {
   touch-action: pan-y;
@@ -1028,6 +1032,7 @@ html {
   display: inline-block;
   padding: 8px 12px;
   color: inherit;
+  text-transform: uppercase;
 }
 ._wysiwyg {
   font-weight: 400;
@@ -1585,7 +1590,7 @@ html {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: 630px;
   pointer-events: none;
   overflow: hidden;
 }
@@ -1597,7 +1602,7 @@ html {
   object-fit: contain;
 }
 .tools__img_info {
-  top: 450px;
+  top: 320px;
   aspect-ratio: 1/1;
   animation: 30s linear infinite rotate;
 }
@@ -2324,6 +2329,7 @@ html {
   color: var(--color-main);
   font-size: var(--text-btn);
   padding: 6px 20px;
+  text-transform: uppercase;
 }
 .article-nav__link:focus-visible {
   outline: 0;
@@ -2341,6 +2347,7 @@ html {
 @media (min-width: 575.98px) {
   :root {
     --width-container: 540px;
+    --width-container-sm: var(--width-container);
     --padding-page: 0px;
     --gap-normal-extra: var(--gap-normal);
   }
@@ -2425,6 +2432,7 @@ html {
 @media (min-width: 767.98px) {
   :root {
     --width-container: 740px;
+    --width-container-sm: var(--width-container);
     --title-2: 32px;
     --title-3: 23px;
     --title-4: 20px;
@@ -2482,6 +2490,7 @@ html {
 @media (min-width: 1023.98px) {
   :root {
     --width-container: 980px;
+    --width-container-sm: var(--width-container);
     --width-icon-large: 72px;
     --width-icon-normal: 56px;
     --height-alert: 96px;
@@ -2796,6 +2805,7 @@ html {
 @media (min-width: 1279.98px) {
   :root {
     --width-container: 1260px;
+    --width-container-sm: var(--width-container);
     --width-article: 780px;
     --title-2: 40px;
     --title-3: 28px;
@@ -2981,6 +2991,7 @@ html {
 @media (min-width: 1599.98px) {
   :root {
     --width-container: 1560px;
+    --width-container-sm: var(--width-container);
     --width-article: 1040px;
   }
   .header__main {
@@ -3100,6 +3111,7 @@ html {
 @media (min-width: 1859.98px) {
   :root {
     --width-container: 1840px;
+    --width-container-sm: 1712px;
     --width-icon-large: 80px;
     --width-icon-normal: 64px;
     --width-icon-smaller: 32px;
