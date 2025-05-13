@@ -1,0 +1,16 @@
+{
+  "name": "inozit-redesign",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "inozit-redesign"
+  },
+  "license": "ISC",
+  "author": "aucuo",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
