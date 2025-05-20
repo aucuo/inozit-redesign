@@ -1,0 +1,144 @@
+
+.calc {
+    .pregnancy {
+
+        &__options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-medium);
+        }
+
+        &__title {
+            text-align: center;
+            span {
+                color: var(--color-accent);
+            }
+        }
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--gap-small);
+        }
+
+        &__option {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: var(--gap-medium);
+            font-size: var(--text-medium);
+            text-align: center;
+            padding: calc(var(--padding-large) - 8px);
+            border-radius: var(--radius-normal);
+            cursor: pointer;
+
+            &--blue {
+                background-color: var(--color-light);
+            }
+
+            &--pink {
+                background-color: var(--color-accent-light);
+            }
+        }
+
+        &__date {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--gap-medium);
+
+            &-title {
+                font-size: var(--text-medium);
+            }
+        }
+
+        &__result {
+            position: relative;
+            margin-top: calc(var(--gap-larger) * 2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 500px) {
+                flex-direction: column;
+                gap: var(--gap-medium);
+            }
+
+            &::before {
+                position: absolute;
+                inset: calc(-1 * var(--gap-larger)) calc(-1 * var(--gap-larger)) 0;
+                height: 2px;
+                background-color: var(--color-shadow);
+                content: "";
+            }
+
+            &-stat {
+                position: absolute;
+                max-width: 215px;
+                width: 100%;
+
+                @media (max-width: 500px) {
+                    position: static;
+                }
+
+                &--birth {
+                    top: 0;
+                    left: 0;
+                }
+
+                &--week {
+                    top: 0;
+                    right: 0;
+                    text-align: right;
+
+                    @media (max-width: 500px) {
+                        text-align: left;
+                    }
+                }
+
+                &--fact {
+                    bottom: 0;
+                    left: 0;
+                    color: var(--color-accent);
+                    font-style: italic;
+                    font-weight: 500;
+                }
+            }
+
+            &-title {
+                color: var(--color-accent);
+                margin-bottom: var(--gap-smaller);
+            }
+            
+            &-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 312px;
+                height: 280px;
+                background: transparent url('../img/content/decor/heart.svg') no-repeat center / cover;
+
+                img {
+                    width: 164px;
+                    height: 164px;
+                }
+
+                @media (max-width: 500px) {
+                    width: 100%;
+                    background-size: contain;
+                    height: fit-content;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        margin: 0 20px;
+                        max-width: 124px;
+                    }
+                }
+
+            }
+        }
+    }
+}

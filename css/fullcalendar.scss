@@ -1,0 +1,206 @@
+.ovulation__fc {
+    background: var(--color-neutral);
+    border-radius: var(--radius-normal);
+
+    // Table cells
+    th,
+    td {
+        border: 4px solid #fff;
+        background-color: #FFE2EC;
+        color: var(--color-accent);
+        font-size: var(--text-normal);
+        text-transform: uppercase;
+    }
+
+    th {
+        .fc-scrollgrid-sync-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+        }
+
+        .fc-col-header-cell-cushion {
+            opacity: 0.6;
+        }
+    }
+
+    td {
+        height: 79px;
+        box-sizing: content-box;
+
+        @media (max-width: 768px) {
+            height: 59px;
+        }
+    }
+
+    .fc {
+        // Toolbar header
+        &-toolbar {
+            margin-bottom: 0 !important;
+            padding: var(--padding-normal) 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &-chunk > div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            // Title
+            &-title {
+                min-width: 200px;
+                margin: 0 var(--gap-normal);
+                text-align: center;
+                font-size: var(--text-medium);
+                color: var(--color-main);
+                text-transform: capitalize;
+
+                @media (max-width: 768px) {
+                    min-width: 130px;
+                    margin: 0 var(--gap-small);
+                }
+
+                .title-year {
+                    color: var(--color-accent);
+                }
+            }
+
+            .fc-button-primary {
+                width: var(--width-icon-smaller);
+                height: var(--width-icon-smaller);
+                padding: 0;
+                background-color: transparent;
+                border: none;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+
+                    path {
+                        transition: var(--transition-duration);
+                    }
+                }
+
+                &:hover,
+                &:not(:disabled):active,
+                &:not(:disabled).fc-button-active {
+                    background-color: transparent;
+                    border: none;
+
+                    svg path {
+                        fill: var(--color-accent-hover);
+                    }
+                }
+
+                &:focus,
+                &:not(:disabled).fc-button-active:focus,
+                &:not(:disabled):active:focus {
+                    box-shadow: none;
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+        }
+
+        &-day {
+            &-other {
+                .fc-daygrid-day-number {
+                    color: var(--color-accent);
+                }
+
+                .fc-daygrid-day-top {
+                    opacity: 0.4;
+                }
+            }
+
+            &-today {
+                background-color: inherit !important;
+            }
+        }
+
+        &-daygrid {
+            // Day numbers
+            &-day {
+                &-frame {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    background-color: #FFF9FB;
+                    padding: var(--padding-normal);
+
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                        padding: 0;
+                    }
+                }
+
+                &-number {
+                    color: var(--color-main);
+                    padding: 0;
+                    font-size: var(--text-medium);
+                }
+
+                &-top {
+                    z-index: 1;
+                }
+
+                // Events
+                &.fc-has-event .fc-daygrid-day-number {
+                    color: var(--color-neutral);
+                    opacity: 1 !important;
+                }
+            }
+        }
+
+        &-scrollgrid {
+            border: none;
+            padding: 0 4px 4px;
+        }
+
+        // Background events
+        &-bg-event {
+            opacity: 1;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: var(--gap-small);
+                bottom: var(--gap-small);
+                width: 24px;
+                height: 24px;
+                background: no-repeat 50% / 100%;
+
+                @media (max-width: 768px) {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            &.fertile-day {
+                z-index: 0;
+                background-color: #FF5A90;
+            }
+
+            &.ovulation-day {
+                z-index: 0;
+                background-color: #29366B;
+
+                &::before {
+                    background-image: url("../img/content/icons/icon-53.svg");
+                }
+            }
+
+            &.menstruation-day {
+                z-index: 0;
+                background-color: transparent;
+
+                &::before {
+                    background-image: url("../img/content/icons/icon-52.svg");
+                }
+            }
+        }
+    }
+}

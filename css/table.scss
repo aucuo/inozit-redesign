@@ -1,0 +1,50 @@
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: var(--radius-medium);
+        border: 3px solid var(--color-shadow);
+        overflow: hidden;
+        background-color: var(--color-shadow);
+
+        th,
+        td {
+            border: 3px solid var(--color-shadow);
+            padding: calc(var(--padding-normal) - 8px) var(--padding-normal);
+            font-size: var(--text-medium);
+            background-color: var(--color-neutral);
+            font-weight: 400;
+            text-align: center;
+
+            &[data-align="left"] {
+                text-align: left;
+            }
+
+            &[data-highlighted] {
+                background-color: var(--color-accent-light);
+                font-weight: 600;
+            }
+
+            &.delete-button {
+                cursor: pointer;
+            }
+
+            svg {
+                vertical-align: middle;
+            }
+        }
+
+        th {
+            background-color: var(--color-light);
+            font-weight: 600;
+        }
+
+        thead {
+            background-color: var(--color-light);
+        }
+    }
+}

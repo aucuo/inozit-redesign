@@ -1,0 +1,43 @@
+
+.counter-el {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background-color: var(--color-neutral);
+    border-radius: var(--radius-normal);
+    gap: 8px;
+
+    &__control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 40px;
+        background-color: unset;
+        border: none;
+        color: #29366B;
+
+        &:focus-visible {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #A9AFC4;
+        }
+    }
+
+    &__btn {
+        width: 48px;
+        height: 48px;
+        background-color: unset;
+        border: none;
+        transition-duration: var(--transition-duration);
+        transition-property: color, background-color, border-color, opacity, transform;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

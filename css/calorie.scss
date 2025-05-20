@@ -1,0 +1,29 @@
+.calc {
+    .calorie {
+        &__head {
+            width: 100%;
+        }
+
+        &__form {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--gap-normal);
+        }
+
+        &__product {
+            width: 100%;
+        }
+
+        &__weight {
+            width: 100%;
+            max-width: 244px;
+        }
+
+        &__panel {
+            margin-bottom: var(--gap-normal);
+            padding: var(--padding-medium);
+        }
+    }
+}
