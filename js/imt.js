@@ -23,16 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return 'Выраженный дефицит массы тела';
         } else if (imt <= 18.5) {
             return 'Недостаточная (дефицит) масса тела';
-        } else if (imt <= 25) {
-            return 'Норма';
         } else if (imt <= 30) {
-            return 'Ожирение I степени';
+            return 'Норма';
         } else if (imt <= 35) {
-            return 'Ожирение II степени';
+            return 'Ожирение I степени';
         } else if (imt <= 40) {
-            return 'Ожирение III степени (морбидное)';
+            return 'Ожирение II степени';
         } else {
-            return 'Крайнее ожирение';
+            return 'Ожирение III степени (морбидное)';
         }
     }
 
@@ -49,7 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
             iconGreen.style.display = 'none';
             iconRed.style.display = 'block';
         }
+
+        highlightTableRow(category);
     }
+
+    [heightInput, weightInput].map(input => {
+        input.addEventListener('input', function (e) {
+            if (this.value.length > 3) this.value = this.value.slice(0, 3)
+        })
+    })
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -76,5 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         iconGreen.style.display = 'none';
         iconRed.style.display = 'none';
+
+        removeHighlight();
     });
+
+    const tableRows = document.querySelectorAll('tr[data-category]');
+    function highlightTableRow(category) {
+        removeHighlight();
+
+        tableRows.forEach(row => {
+            if (row.getAttribute('data-category') === category) {
+                row.setAttribute('data-highlighted', '');
+            }
+        });
+    }
+
+    function removeHighlight() {
+        tableRows.forEach(row => {
+            row.removeAttribute('data-highlighted');
+        });
+    }
 });

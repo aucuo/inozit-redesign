@@ -11,6 +11,13 @@
         overflow: hidden;
         background-color: var(--color-shadow);
 
+        tr[data-highlighted] {
+            th, td {
+                background-color: var(--color-accent-light) !important;
+                font-weight: 600;
+            }
+        }
+
         th,
         td {
             border: 3px solid var(--color-shadow);
@@ -22,11 +29,6 @@
 
             &[data-align="left"] {
                 text-align: left;
-            }
-
-            &[data-highlighted] {
-                background-color: var(--color-accent-light);
-                font-weight: 600;
             }
 
             &.delete-button {

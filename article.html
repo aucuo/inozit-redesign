@@ -11,9 +11,9 @@
 	<link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
 	<title>Когда внешние несовершенства могут говорить о серьезных проблемах?</title>
-	    <link rel="stylesheet" href="./css/style.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.css">
-<link rel="stylesheet" href="./css/style-addiction.css">
+	<link rel="stylesheet" href="./css/style.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.css">
+	<link rel="stylesheet" href="./css/style-addiction.css">
 	<script src="./js/script.min.js" defer></script>
 
 	<script type="application/ld+json">
@@ -613,14 +613,14 @@
 									</li>
 								</ul>
 							</div>
+							<button
+									class="article__btn article__btn_favourites-pc btn btn_neutral icon-heart"
+									type="button"
+									data-favourites
+							>
+								Мне нравится
+							</button>
 						</details>
-						<button
-								class="article__btn article__btn_favourites-pc btn btn_neutral icon-heart"
-								type="button"
-								data-favourites
-						>
-							Мне нравится
-						</button>
 					</div>
 				</div>
 			</div>
@@ -644,6 +644,10 @@
 											<img class="article-card__img" src="./img/content/pic/article-card-1.jpg"
 											     alt="Руки мамы трогают ножки малыша"></picture>
 									</figure>
+									<div class="article-card__stats">
+										<span>Читать 15 мин.</span>
+										<span>39 просмотров</span>
+									</div>
 									<h3 class="article-card__title _h4">
                         <span>
                           Синдром поликистозных яичников &mdash; есть ли шанс забеременеть?
@@ -671,6 +675,10 @@
 											<img class="article-card__img" src="./img/content/pic/article-card-2.jpg"
 											     alt="Женское лицо с идиальной кожей крупным планом"></picture>
 									</figure>
+									<div class="article-card__stats">
+										<span>Читать 15 мин.</span>
+										<span>39 просмотров</span>
+									</div>
 									<h3 class="article-card__title _h4">
 										<span>Причины возникновения акне и методы борьбы с ним</span>
 									</h3>
@@ -704,6 +712,10 @@
 											     alt="Картинка УЗИ с малышом в животе, на которую показывают родители">
 										</picture>
 									</figure>
+									<div class="article-card__stats">
+										<span>Читать 15 мин.</span>
+										<span>39 просмотров</span>
+									</div>
 									<h3 class="article-card__title _h4">
 										<span>Когда и как мужчине необходимо готовиться к зачатию?</span>
 									</h3>
@@ -729,6 +741,10 @@
 											<img class="article-card__img" src="./img/content/pic/article-card-4.jpg"
 											     alt="Стройная девушка обхватывает талию мерной лентой"></picture>
 									</figure>
+									<div class="article-card__stats">
+										<span>Читать 15 мин.</span>
+										<span>39 просмотров</span>
+									</div>
 									<h3 class="article-card__title _h4">
 										<span>Снижение и поддержание веса</span>
 									</h3>
@@ -1266,9 +1282,12 @@
     (() => {
         "use strict";
         document.addEventListener("click", (e) => {
-            if (e.target.closest("[data-favourites]")) {
-                e.target.classList.toggle("_is-active");
-            }
+            document.querySelectorAll('[data-favourites]').forEach(el => {
+                el.classList.toggle("_is-active");
+            })
+            // if (e.target.closest("[data-favourites]")) {
+            //     e.target.classList.toggle("_is-active");
+            // }
         });
     })();
 </script>
