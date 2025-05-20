@@ -52,9 +52,23 @@ document.querySelectorAll('.counter-el').forEach(counter => {
         }
     });
 
-    // Разрешаем ввод, но НЕ делаем обработку сразу
-    input.addEventListener('input', () => {
-        // Можно добавить подсветку или класс, если нужно
+    input.addEventListener('keydown', function(e) {
+        const isNumberKey =
+            (e.key >= '0' && e.key <= '9') ||
+            (e.key >= 'Numpad0' && e.key <= 'Numpad9');
+
+        const allowedKeys = [
+            'Backspace',
+            'Delete',
+            'ArrowLeft',
+            'ArrowRight',
+            'Tab',
+            'Enter'
+        ];
+
+        if (!isNumberKey && !allowedKeys.includes(e.key)) {
+            e.preventDefault();
+        }
     });
 
     // Проверяем и корректируем только при потере фокуса

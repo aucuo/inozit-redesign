@@ -142,7 +142,16 @@ numberInput.addEventListener('keydown', function (e) {
         (e.key >= '0' && e.key <= '9') ||
         (e.key >= 'Numpad0' && e.key <= 'Numpad9');
 
-    if (!isNumberKey) {
+    const allowedKeys = [
+        'Backspace',
+        'Delete',
+        'ArrowLeft',
+        'ArrowRight',
+        'Tab',
+        'Enter'
+    ];
+
+    if (!isNumberKey && !allowedKeys.includes(e.key)) {
         e.preventDefault();
     }
 });
