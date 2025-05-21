@@ -25,25 +25,49 @@ function showSearchResults(query) {
         return;
     }
 
-    const filtered = products.filter(p =>
-        p.name.toLowerCase().includes(query.toLowerCase())
-    );
-
+    // Очистка предыдущих результатов
     searchResults.innerHTML = '';
-    searchResults.style.display = filtered.length ? 'block' : 'none';
 
-    filtered.forEach(product => {
-        const item = document.createElement('div');
-        item.className = 'search-results-item';
-        item.textContent = product.name;
-        item.addEventListener('click', () => {
-            // Установка выбранного продукта в input
-            productInput.value = product.name;
+    const url = 'https://inosit.ru/api/meals/search ';
+    const params = new URLSearchParams();
+    params.append('q', query);
 
-            searchResults.style.display = 'none';
+    fetch(url + '?' + params)
+        .then(response => {
+            if (!response.ok) throw new Error('Ошибка сети');
+            return response.json();
+        })
+        .then(data => {
+            if (!data.result || !Array.isArray(data.result)) {
+                throw new Error('Неверный формат данных от сервера');
+            }
+
+            const filtered = data.result.map(item => ({
+                name: item.value,
+                proteins: item.proteins,
+                fats: item.fats,
+                carbs: item.carbons,
+                calories: item.calories
+            }));
+
+            searchResults.innerHTML = '';
+            searchResults.style.display = filtered.length ? 'block' : 'none';
+
+            filtered.forEach(product => {
+                const item = document.createElement('div');
+                item.className = 'search-results-item';
+                item.textContent = product.name;
+                item.addEventListener('click', () => {
+                    productInput.value = product.name;
+                    searchResults.style.display = 'none';
+                });
+                searchResults.appendChild(item);
+            });
+
+        })
+        .catch(error => {
+            console.error('Ошибка при поиске:', error);
         });
-        searchResults.appendChild(item);
-    });
 }
 
 // Автоподстановка при вводе
