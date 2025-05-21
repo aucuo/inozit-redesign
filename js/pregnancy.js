@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const diffDays = Math.floor((now - selectedDate) / (1000 * 60 * 60 * 24));
         week = Math.floor(diffDays / 7) + 1;
 
-        if (week < 2 || week > 40) {
+        if (week < 2) {
             alert('Невозможная неделя беременности. Пожалуйста, проверьте введённую дату.');
             return;
         }
