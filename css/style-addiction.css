@@ -11,6 +11,10 @@
   overflow: hidden;
   background-color: var(--color-shadow);
 }
+.table-wrapper table tr[data-highlighted] th, .table-wrapper table tr[data-highlighted] td {
+  background-color: var(--color-accent-light) !important;
+  font-weight: 600;
+}
 .table-wrapper table th,
 .table-wrapper table td {
   border: 3px solid var(--color-shadow);
@@ -23,11 +27,6 @@
 .table-wrapper table th[data-align=left],
 .table-wrapper table td[data-align=left] {
   text-align: left;
-}
-.table-wrapper table th[data-highlighted],
-.table-wrapper table td[data-highlighted] {
-  background-color: var(--color-accent-light);
-  font-weight: 600;
 }
 .table-wrapper table th.delete-button,
 .table-wrapper table td.delete-button {
@@ -149,12 +148,13 @@
   order: 0;
 }
 .calendar-form .air-datepicker {
+  z-index: 4;
   box-sizing: border-box;
   font-family: inherit;
   font-size: var(--text-small);
   border: none;
   border-radius: var(--radius-normal);
-  padding: 20px;
+  padding: calc(var(--padding-normal) - 4px);
   box-shadow: 0 4px 16px 0 rgba(41, 54, 107, 0.0784313725);
   left: 0;
   top: calc(100% + 8px);
@@ -165,9 +165,7 @@
 }
 @media (max-width: 440px) {
   .calendar-form .air-datepicker {
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
+    --adp-width: 262px;
   }
 }
 .calendar-form .air-datepicker--pointer {
@@ -433,6 +431,12 @@
 .input-group__chunk--large {
   width: 48px;
   height: 48px;
+}
+@media (max-width: 1024px) {
+  .input-group__chunk--large {
+    width: 32px;
+    height: 32px;
+  }
 }
 .input-group__input {
   width: 100%;
@@ -733,12 +737,27 @@
   align-items: center;
   gap: var(--gap-normal);
 }
+@media (max-width: 768px) {
+  .calc .calorie__form {
+    flex-wrap: wrap;
+  }
+}
 .calc .calorie__product {
   width: 100%;
 }
 .calc .calorie__weight {
   width: 100%;
   max-width: 244px;
+}
+@media (max-width: 768px) {
+  .calc .calorie__weight {
+    max-width: unset;
+  }
+}
+@media (max-width: 768px) {
+  .calc .calorie__btn {
+    width: 100%;
+  }
 }
 .calc .calorie__panel {
   margin-bottom: var(--gap-normal);

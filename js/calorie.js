@@ -132,6 +132,40 @@ function updateTotal() {
     footerCells[6].textContent = (totalCalories / totalWeight * 100).toFixed(2);
 }
 
+
+numberInput.addEventListener('input', function (e) {
+    if (this.value.length > 4) this.value = this.value.slice(0, 4)
+})
+
+numberInput.addEventListener('keydown', function (e) {
+    const isNumberKey =
+        (e.key >= '0' && e.key <= '9') ||
+        (e.key >= 'Numpad0' && e.key <= 'Numpad9');
+
+    const allowedKeys = [
+        'Backspace',
+        'Delete',
+        'ArrowLeft',
+        'ArrowRight',
+        'Tab',
+        'Enter'
+    ];
+
+    if (!isNumberKey && !allowedKeys.includes(e.key)) {
+        e.preventDefault();
+    }
+});
+
+productInput.addEventListener('keydown', function (e) {
+    const isNumberKey =
+        (e.key >= '0' && e.key <= '9') ||
+        (e.key >= 'Numpad0' && e.key <= 'Numpad9');
+
+    if (isNumberKey) {
+        e.preventDefault();
+    }
+});
+
 // Отправка формы
 document.querySelector('.calorie__form').addEventListener('submit', e => {
     e.preventDefault();

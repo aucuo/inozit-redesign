@@ -27,6 +27,7 @@ function calendarForm() {
         const input = container.querySelector('.js-calendar-input');
         const datePickerEl = container.querySelector('.datepicker-here');
 
+        input.addEventListener('focus', function (e) {e.preventDefault()})
         const picker = new AirDatepicker(input, {
             container: datePickerEl,
             position(){},
@@ -40,6 +41,7 @@ function calendarForm() {
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9998 2.6665C8.63604 2.6665 2.6665 8.63604 2.6665 15.9998C2.6665 23.3636 8.63604 29.3332 15.9998 29.3332C23.3636 29.3332 29.3332 23.3636 29.3332 15.9998C29.3332 8.63604 23.3636 2.6665 15.9998 2.6665ZM13.7241 11.0575C13.2034 11.5782 13.2034 12.4215 13.7241 12.9422L16.7817 15.9998L13.7241 19.0575L13.6323 19.158C13.205 19.6817 13.2359 20.454 13.7241 20.9422C14.2123 21.4304 14.9846 21.4613 15.5083 21.034L15.6089 20.9422L19.23 17.3211L19.3589 17.1795C19.9575 16.4453 19.9142 15.3629 19.23 14.6785L15.6089 11.0575C15.0882 10.5368 14.2448 10.5368 13.7241 11.0575Z" fill="#FF5A90"/>
                 </svg>
             `,
+            showEvent: 'none',
             onShow: () => {
                 button.textContent = 'Закрыть';
             },
@@ -61,6 +63,11 @@ function calendarForm() {
             else
                 picker.show();
         });
+
+        window.addEventListener('scroll', ()=>{
+            if (picker.visible)
+                picker.hide();
+        })
 
         // Закрытие по клику вне области
         document.addEventListener('click', (e) => {

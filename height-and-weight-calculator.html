@@ -10,7 +10,7 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
 	<link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-	<title>Когда внешние несовершенства могут говорить о серьезных проблемах?</title>
+	<title>Калькулятор индекса массы тела (ИМТ)</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css">
 	    <link rel="stylesheet" href="./css/style.min.css">
@@ -287,7 +287,7 @@
 												Рост
 											</div>
 											<div class="imt__input imt__input--height input-group">
-												<input type="number" minlength="1" maxlength="3" min="30" max="250" step="1" class="input-group__input"
+												<input type="number" inputmode="numeric" min="30" max="250" step="1" class="input-group__input"
 												       name="height" placeholder="160">
 
 												<div class="input-group__chunk">
@@ -300,7 +300,7 @@
 												Вес
 											</div>
 											<div class="imt__input imt__input--weight input-group">
-												<input type="number" minlength="1" maxlength="3" min="1" max="300" class="input-group__input"
+												<input type="number" inputmode="numeric" min="1" max="300" class="input-group__input"
 												       name="weight" placeholder="50" step="0.1">
 
 												<div class="input-group__chunk">
@@ -364,27 +364,27 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
+										<tr data-category="Выраженный дефицит массы тела">
 											<td data-align="left">Выраженный дефицит массы тела</td>
 											<td><b>16 и менее</b></td>
 										</tr>
-										<tr>
+										<tr data-category="Недостаточная (дефицит) масса тела">
 											<td data-align="left">Недостаточная (дефицит) масса тела</td>
 											<td><b>16-18,5</b></td>
 										</tr>
-										<tr>
-											<td data-highlighted data-align="left">Норма</td>
-											<td data-highlighted><b>18,5-25</b></td>
+										<tr data-category="Норма">
+											<td data-align="left">Норма</td>
+											<td><b>18,5-25</b></td>
 										</tr>
-										<tr>
+										<tr data-category="Ожирение I степени">
 											<td data-align="left">Ожирение первой степени</td>
 											<td><b>30-35</b></td>
 										</tr>
-										<tr>
+										<tr data-category="Ожирение II степени">
 											<td data-align="left">Ожирение второй степени</td>
 											<td><b>35-40</b></td>
 										</tr>
-										<tr>
+										<tr data-category="Ожирение III степени (морбидное)">
 											<td data-align="left">Ожирение третьей степени (морбидное)</td>
 											<td><b>40 и более</b></td>
 										</tr>
@@ -417,7 +417,11 @@
 											<img class="article-card__img" src="./img/content/pic/article-card-1.jpg"
 											     alt="Руки мамы трогают ножки малыша"></picture>
 									</figure>
-									<h3 class="article-card__title _h4">
+									<div class="article-card__stats">
+                      <span>Читать 15 мин.</span>
+                      <span>39 просмотров</span>
+                    </div>
+<h3 class="article-card__title _h4">
                         <span>
                           Синдром поликистозных яичников &mdash; есть ли шанс забеременеть?
                         </span>
@@ -444,7 +448,11 @@
 											<img class="article-card__img" src="./img/content/pic/article-card-2.jpg"
 											     alt="Женское лицо с идиальной кожей крупным планом"></picture>
 									</figure>
-									<h3 class="article-card__title _h4">
+									<div class="article-card__stats">
+                      <span>Читать 15 мин.</span>
+                      <span>39 просмотров</span>
+                    </div>
+<h3 class="article-card__title _h4">
 										<span>Причины возникновения акне и методы борьбы с ним</span>
 									</h3>
 									<div class="article-card__tag">
@@ -477,7 +485,11 @@
 											     alt="Картинка УЗИ с малышом в животе, на которую показывают родители">
 										</picture>
 									</figure>
-									<h3 class="article-card__title _h4">
+									<div class="article-card__stats">
+                      <span>Читать 15 мин.</span>
+                      <span>39 просмотров</span>
+                    </div>
+<h3 class="article-card__title _h4">
 										<span>Когда и как мужчине необходимо готовиться к зачатию?</span>
 									</h3>
 									<div class="article-card__tag">
@@ -502,7 +514,11 @@
 											<img class="article-card__img" src="./img/content/pic/article-card-4.jpg"
 											     alt="Стройная девушка обхватывает талию мерной лентой"></picture>
 									</figure>
-									<h3 class="article-card__title _h4">
+									<div class="article-card__stats">
+                      <span>Читать 15 мин.</span>
+                      <span>39 просмотров</span>
+                    </div>
+<h3 class="article-card__title _h4">
 										<span>Снижение и поддержание веса</span>
 									</h3>
 									<div class="article-card__tag">

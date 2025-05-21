@@ -11,6 +11,7 @@
   "type": "commonjs",
   "main": "index.html",
   "scripts": {
+    "dev": "live-server --host=localhost --port=5173",
     "deploy": "gh-pages -d ."
   },
   "devDependencies": {
