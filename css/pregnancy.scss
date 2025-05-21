@@ -74,6 +74,12 @@
                 content: "";
             }
 
+            &-pora {
+                display: none;
+                position: absolute;
+                font-size: var(--text-medium);
+            }
+
             &-stat {
                 position: absolute;
                 max-width: 215px;

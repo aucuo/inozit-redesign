@@ -1,7 +1,14 @@
 @charset "UTF-8";
+.table-pink {
+  color: var(--color-accent);
+}
+
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
+}
+.table-wrapper--vertical-center td, .table-wrapper--vertical-center th {
+  vertical-align: top;
 }
 .table-wrapper table {
   width: 100%;
@@ -882,6 +889,11 @@
   height: 2px;
   background-color: var(--color-shadow);
   content: "";
+}
+.calc .pregnancy__result-pora {
+  display: none;
+  position: absolute;
+  font-size: var(--text-medium);
 }
 .calc .pregnancy__result-stat {
   position: absolute;

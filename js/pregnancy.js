@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
             week = Math.floor(diffDays / 7) + 1;
         }
 
-        if (week < 2 || week > 40) {
+        if (week < 2) {
             alert('Недопустимый срок беременности.');
             return;
         }
@@ -139,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Форматируем дату как DD.MM.YYYY
         const formatter = new Intl.DateTimeFormat('ru-RU');
         const formattedDueDate = formatter.format(dueDate);
+        const stats = document.querySelectorAll('.pregnancy__result-stat')
+        const pora = document.querySelector('.pregnancy__result-pora')
 
         dueDateEl.textContent = formattedDueDate;
         weekEl.textContent = `${week} неделя`;
@@ -148,6 +150,20 @@ document.addEventListener("DOMContentLoaded", function () {
         stepDate.style.display = 'flex';
         stepResult.style.display = 'flex';
         infoBlock.style.display = 'flex';
+
+        if (week > 40) {
+            pora.style.display = 'block';
+            stats.forEach(el => {
+                el.style.opacity = '0';
+            });
+            illustrationEl.style.opacity = '0';
+        } else {
+            pora.style.display = 'none';
+            stats.forEach(el => {
+                el.style.opacity = '';
+            });
+            illustrationEl.style.opacity = '';
+        }
     }
 
     // Обработчики кнопок "Выбор метода"

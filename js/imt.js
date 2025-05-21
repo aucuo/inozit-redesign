@@ -23,8 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return 'Выраженный дефицит массы тела';
         } else if (imt <= 18.5) {
             return 'Недостаточная (дефицит) масса тела';
-        } else if (imt <= 30) {
+        } else if (imt <= 25) {
             return 'Норма';
+        } else if (imt <= 30) {
+            return 'Выше нормы';
         } else if (imt <= 35) {
             return 'Ожирение I степени';
         } else if (imt <= 40) {

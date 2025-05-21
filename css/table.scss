@@ -1,7 +1,16 @@
 
+.table-pink {
+    color: var(--color-accent);
+}
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
+
+    &--vertical-center {
+        td,th {
+            vertical-align: top;
+        }
+    }
 
     table {
         width: 100%;
