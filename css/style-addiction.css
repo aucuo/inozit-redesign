@@ -890,6 +890,11 @@
   background-color: var(--color-shadow);
   content: "";
 }
+.calc .pregnancy__result-pora {
+  display: none;
+  position: absolute;
+  font-size: var(--text-medium);
+}
 .calc .pregnancy__result-stat {
   position: absolute;
   max-width: 215px;
