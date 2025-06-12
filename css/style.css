@@ -797,6 +797,15 @@ html {
     background-color: var(--color-accent);
 }
 
+@keyframes rotate-circle {
+    from {
+        transform: translate(-50%, -50%) rotate(0)
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
+
 @keyframes rotate {
     to {
         transform: translate(-50%, -50%) rotate(-360deg);
@@ -1728,7 +1737,7 @@ html {
 
 .substance-sticker {
     position: absolute;
-    top: 100%;
+    top: 50%;
     transform: translateY(-50%);
     right: 0;
     display: flex;
@@ -1744,7 +1753,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: 10s linear infinite rotate;
+    animation: 10s linear infinite rotate-circle;
 }
 
 .substance-sticker__text {
@@ -3271,10 +3280,10 @@ html {
     }
 
     .welcome__img-box {
-        right: 0;
+        right: -10%;
         bottom: 0;
         transform: none;
-        width: 78%;
+        width: 100%;
     }
 
     .welcome__img {
@@ -3598,6 +3607,13 @@ html {
 
     .welcome__head {
         max-width: 510px;
+    }
+
+    .welcome__img-box {
+        right: 0;
+        bottom: 0;
+        transform: none;
+        width: 78%;
     }
 
     .effect-slider__actions {
